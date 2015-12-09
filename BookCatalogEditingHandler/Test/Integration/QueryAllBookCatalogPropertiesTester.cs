@@ -1,0 +1,36 @@
+using System.Linq.Expressions;
+using BookCatalogEditingHandler.Context;
+using BookCatalogEditingHandler.RequestModel;
+using BookCatalogEditingHandler.ResponseModel;
+using BookCatalogEditor.RequestModelFactory;
+using BookCatelogEditingHandler;
+using NUnit.Framework;
+
+namespace BookCatalogEditingHandler.Test.Integration
+{
+  [TestFixture]
+  public class QueryAllBookCatalogPropertiesTester : GivenBookCatalogPropertyContextTester
+  {
+    [Test]
+    public void TestExecute()
+    {
+      var request = QueryAllBookCatalogPropertiesModelFactory.Create();
+      var respond = (QueryAllCatalogPropertiesResponseModel) RequestExecutor.Execute(request);
+
+      Assert.IsTrue(respond.ExecuteResult);
+      AssertQueryAllBookCatalogResult(respond);   
+    }
+
+    public void AssertQueryAllBookCatalogResult(QueryAllCatalogPropertiesResponseModel responseModel)
+    {
+      Assert.AreEqual(responseModel.PresentableCatalogProperties.Count, BookCatalogContext.CatalogProperties.Count);
+
+      for (int index = 0; index < responseModel.PresentableCatalogProperties.Count; index++)
+      {
+        Assert.AreEqual(responseModel.PresentableCatalogProperties[index].Name, BookCatalogContext.CatalogProperties[index].Name);
+        Assert.AreEqual(responseModel.PresentableCatalogProperties[index].Value, BookCatalogContext.CatalogProperties[index].Value);
+
+      }
+    }
+  }
+}

@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5C19FEC8-10A6-4507-BB7F-9DD31B8839A3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BookCatelogEditingHandler</RootNamespace>
+    <AssemblyName>BookCatelogEditingHandler</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="nunit.framework">
+      <HintPath>..\..\..\..\Data\SVN\DCM\trunk\src\third_party_products\UnitTest\NUnit\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Entity\CatalogProperty.cs" />
+    <Compile Include="RequestModelFactory\AddBookCatalogPropertyRequestModelFactory.cs" />
+    <Compile Include="RequestModelFactory\AddBookItemRequestModelFactory.cs" />
+    <Compile Include="RequestModelFactory\ModifyBookCatalogPropertyRequestModelFactory.cs" />
+    <Compile Include="RequestModelFactory\ModifyBookItemRequestModelFactory.cs" />
+    <Compile Include="RequestModelFactory\QueryAllBookCatalogPropertiesModelFactory.cs" />
+    <Compile Include="RequestModelFactory\RemoveBookCatalogPropertyModelFactory.cs" />
+    <Compile Include="RequestModelFactory\RemoveBookItemRequestModelFactory.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Context\BookCatalogContext.cs" />
+    <Compile Include="RequestModel\AddBookCatalogPropertyRequestModel.cs" />
+    <Compile Include="RequestModel\AddBookCatalogPropertyRequestModelImpl.cs" />
+    <Compile Include="RequestModel\AddBookItemRequestModel.cs" />
+    <Compile Include="RequestModel\AddBookItemRequestModelImpl.cs" />
+    <Compile Include="RequestModel\ModifyBookCatalogPropertyRequestModel.cs" />
+    <Compile Include="RequestModel\ModifyBookCatalogPropertyRequestModelImpl.cs" />
+    <Compile Include="RequestModel\ModifyBookItemRequestModel.cs" />
+    <Compile Include="RequestModel\ModifyBookItemRequestModelImpl.cs" />
+    <Compile Include="RequestModel\QueryAllCatalogPropertiesRequestModel.cs" />
+    <Compile Include="RequestModel\RemoveBookCatalogPropertyRequestModel.cs" />
+    <Compile Include="RequestModel\RemoveBookCatalogPropertyRequestModelImpl.cs" />
+    <Compile Include="RequestModel\RemoveBookItemRequestModel.cs" />
+    <Compile Include="RequestModel\RemoveBookItemRequestModelImpl.cs" />
+    <Compile Include="RequestModel\QueryAllCatalogPropertiesRequestModelImpl.cs" />
+    <Compile Include="ResponseModel\AddBookCatalogProperyResponseModelImpl.cs" />
+    <Compile Include="ResponseModel\AddBookItemResponseModelImpl.cs" />
+    <Compile Include="ResponseModel\ModifyBookCatalogPropertyResponseModelImpl.cs" />
+    <Compile Include="ResponseModel\ModifyBookItemResponseModelImpl.cs" />
+    <Compile Include="ResponseModel\PresentableCatalogProperty.cs" />
+    <Compile Include="ResponseModel\QueryAllCatalogPropertiesResponseModel.cs" />
+    <Compile Include="ResponseModel\QueryAllCatalogPropertiesResponseModelImpl.cs" />
+    <Compile Include="ResponseModel\RemoveBookCatalogPropertyResponseModelImpl.cs" />
+    <Compile Include="ResponseModel\RemoveBookItemResponseModelImpl.cs" />
+    <Compile Include="Test\Integration\AddBookCatalogPropertyTester.cs" />
+    <Compile Include="RequestExecutor.cs" />
+    <Compile Include="ResponseModel\ResponseModel.cs" />
+    <Compile Include="RequestModel\RequestModel.cs" />
+    <Compile Include="ResponseModel\AddBookCatalogProperyResponseModel.cs" />
+    <Compile Include="ResponseModel\AddBookItemResponseModel.cs" />
+    <Compile Include="ResponseModel\ModifyBookCatalogPropertyResponseModel.cs" />
+    <Compile Include="ResponseModel\ModifyBookItemResponseModel.cs" />
+    <Compile Include="Test\Integration\AddBookItemPropertyTester.cs" />
+    <Compile Include="Test\Integration\ModifyBookCatalogPropertyTester.cs" />
+    <Compile Include="Test\Integration\ModifyBookItemPropertyTester.cs" />
+    <Compile Include="Test\Integration\QueryAllBookCatalogPropertiesTester.cs" />
+    <Compile Include="Test\Integration\RemoveBookCatalogPropertyTester.cs" />
+    <Compile Include="Test\Integration\RemoveBookItemTester.cs" />
+    <Compile Include="Usecase\QueryAllCatalogPropertiesUsecase.cs" />
+    <Compile Include="Test\QueryAllCatalogPropertiesUsecaseTester.cs" />
+    <Compile Include="ResponseModel\RemoveBookCatalogPropertyResponseModel.cs" />
+    <Compile Include="ResponseModel\RemoveBookItemResponseModel.cs" />
+    <Compile Include="Usecase\RemoveBookItemUsecase.cs" />
+    <Compile Include="Test\RemoveBookItemUsecaseTester.cs" />
+    <Compile Include="Usecase\ModifyBookItemUsecase.cs" />
+    <Compile Include="Test\GivenBookItemContextTester.cs" />
+    <Compile Include="Test\ModifyBookItemUsecaseTester.cs" />
+    <Compile Include="Usecase\AddBookItemUsecase.cs" />
+    <Compile Include="Test\AddBookItemUsecaseTester.cs" />
+    <Compile Include="Test\GivenBookCatalogPropertyContextTester.cs" />
+    <Compile Include="Entity\BookItem.cs" />
+    <Compile Include="Usecase\RemoveBookCatalogPropertyUsecase.cs" />
+    <Compile Include="Test\RemoveBookCatalogPropertyUsercaseTester.cs" />
+    <Compile Include="Usecase\ModifyBookCatalogPropertyUsecase.cs" />
+    <Compile Include="Test\ModifyBookCatalogPropertyUsecaseTester.cs" />
+    <Compile Include="Usecase\AddBookCatalogPropertyUsecase.cs" />
+    <Compile Include="Test\AddBookCatalogPropertyUsecaseTester.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
