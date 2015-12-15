@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using BookCatalogEditingHandler.ResponseModel;
 using NUnit.Framework;
 
 namespace BookCatalogEditingHandler.ResponseModel

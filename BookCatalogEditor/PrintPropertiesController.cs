@@ -4,8 +4,8 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using BookCatalogEditingHandler.RequestModel;
 using BookCatalogEditingHandler.ResponseModel;
-using BookCatalogEditor.ResponseModelFactory;
-using BookCatelogEditingHandler.Usecase;
+//using BookCatalogEditor.ResponseModelFactory;
+//using BookCatelogEditingHandler.Usecase;
 
 namespace BookCatalogEditor
 {
@@ -13,10 +13,11 @@ namespace BookCatalogEditor
   {
     public bool Execute()
     {
-      QueryAllCatalogPropertiesResponseModel responseModel = QueryAllCatalogPropertiesResponseModelFactory.Create();
+     /* QueryAllCatalogPropertiesResponseModel responseModel = QueryAllCatalogPropertiesResponseModelFactory.Create();
       ConsolePresenter presenter = new ConsolePresenter(new ConsoleView());
 
-      return presenter.Execute(responseModel);
+      return presenter.Execute(responseModel); */
+      return true;
     }
   }
 

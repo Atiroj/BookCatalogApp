@@ -1,5 +1,4 @@
-﻿
-namespace BookCatalogEditingHandler.RequestModel
+﻿namespace BookCatalogEditingHandler.RequestModel
 {
   internal class ModifyBookCatalogPropertyRequestModelImpl : ModifyBookCatalogPropertyRequestModel
   {

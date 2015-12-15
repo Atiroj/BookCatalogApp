@@ -1,9 +1,9 @@
 using System.Linq;
 using BookCatalogEditingHandler.Context;
-using BookCatalogEditingHandler.Entity;
 using BookCatalogEditingHandler.RequestModel;
-using BookCatalogEditingHandler.Test;
 using BookCatalogEditingHandler.Usecase;
+using BookCatalogEditingHandler.Entity;
+using BookCatalogEditingHandler.Test;
 using NUnit.Framework;
 
 namespace BookCatalogEditingHandler.Test

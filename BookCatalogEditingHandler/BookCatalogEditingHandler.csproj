@@ -30,8 +30,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BookCatalogController, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\BookCatalogController\bin\Debug\BookCatalogController.dll</HintPath>
+    </Reference>
     <Reference Include="nunit.framework">
-      <HintPath>..\..\..\..\Data\SVN\DCM\trunk\src\third_party_products\UnitTest\NUnit\nunit.framework.dll</HintPath>
+      <HintPath>..\..\..\..\Desktop\BookCatalogApp\BookCatalogApp\BookCatalogEditingHandler\bin\Debug\nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -75,6 +79,12 @@
     <Compile Include="ResponseModel\QueryAllCatalogPropertiesResponseModelImpl.cs" />
     <Compile Include="ResponseModel\RemoveBookCatalogPropertyResponseModelImpl.cs" />
     <Compile Include="ResponseModel\RemoveBookItemResponseModelImpl.cs" />
+    <Compile Include="Test\Controller\AddBookItemControllerTester.cs" />
+    <Compile Include="Test\Controller\ModifyBookCatalogPropertyControllerTester.cs" />
+    <Compile Include="Test\Controller\ModifyBookItemControllerTester.cs" />
+    <Compile Include="Test\Controller\QueryAllBookCatalogPropertiesControllerTester.cs" />
+    <Compile Include="Test\Controller\RemoveBookCatalogPropertyControllerTester.cs" />
+    <Compile Include="Test\Controller\RemoveBookItemControllerTester.cs" />
     <Compile Include="Test\Integration\AddBookCatalogPropertyTester.cs" />
     <Compile Include="RequestExecutor.cs" />
     <Compile Include="ResponseModel\ResponseModel.cs" />
@@ -89,6 +99,7 @@
     <Compile Include="Test\Integration\QueryAllBookCatalogPropertiesTester.cs" />
     <Compile Include="Test\Integration\RemoveBookCatalogPropertyTester.cs" />
     <Compile Include="Test\Integration\RemoveBookItemTester.cs" />
+    <Compile Include="Test\Controller\AddBookCatalogPropertyControllerTester.cs" />
     <Compile Include="Usecase\QueryAllCatalogPropertiesUsecase.cs" />
     <Compile Include="Test\QueryAllCatalogPropertiesUsecaseTester.cs" />
     <Compile Include="ResponseModel\RemoveBookCatalogPropertyResponseModel.cs" />
