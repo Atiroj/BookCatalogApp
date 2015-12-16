@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using BookCatalogEditingHandler.ResponseModel;
 using BookCatalogEditor.RequestModelFactory;
 using BookCatelogEditingHandler;
@@ -7,34 +8,17 @@ namespace BookCatalogController
 {
   public class QueryAllBookCatalogPropertiesController : Controller
   {
-    public List<PresentableCatalogProperty> PresentableQueryList { get; set; }
-    
-    public Presenter ControlPresenter { get; set; }
+    private QueryAllCatalogPropertiesResponseModel _responseModel;
+
+    public QueryAllCatalogPropertiesResponseModel ResponseModel
+    {
+      get { return _responseModel;}
+    }
 
     public void Execute()
     {
       var request = QueryAllBookCatalogPropertiesModelFactory.Create();
-      var response = (QueryAllCatalogPropertiesResponseModel) RequestExecutor.Execute(request);
-
-      if (null != response)
-      {
-        PresentableQueryList = new List<PresentableCatalogProperty>();
-        PresentableQueryList = response.PresentableCatalogProperties;
-        ControlPresenter = new MessagePresenter();
-        ControlPresenter.PresentedData = ConcatinatePresentableData();
-      }
+      _responseModel = (QueryAllCatalogPropertiesResponseModel) RequestExecutor.Execute(request);
     }
-
-    private string ConcatinatePresentableData()
-    {
-      string concatResult = "";
-
-      foreach (var presentableData in PresentableQueryList)
-        concatResult += (presentableData.Name + ", " + presentableData.Value + "\n");
-
-      return concatResult;
-    }
-
-    
   }
 }

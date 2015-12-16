@@ -6,18 +6,19 @@ namespace BookCatalogController
 {
   public class AddBookItemController
   {
-    public Presenter ControlorPresenter { get; set; }
+    private AddBookItemResponseModel _responseModel;
 
-    public void Execute(string name, string publisher)
+    public AddBookItemResponseModel ResponseModel
     {
-      var request = AddBookItemRequestModelFactory.Create(name, publisher);
-      var response = (AddBookItemResponseModel)RequestExecutor.Execute(request);
-
-      if (response != null)
-      {
-        ControlorPresenter = new MessagePresenter();
-        ControlorPresenter.PresentedData = "Item has been added";
-      }     
+      get { return _responseModel; }
     }
+
+    public void Execute(string input)
+    {
+      string[] inputs = input.Split(',');
+      var request = AddBookItemRequestModelFactory.Create(inputs[0], inputs[1]);
+      _responseModel = (AddBookItemResponseModel)RequestExecutor.Execute(request);
+    }
+    
   }
 }

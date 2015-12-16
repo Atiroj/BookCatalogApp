@@ -1,7 +1,9 @@
+using BookCatalogEditingHandler.ResponseModel;
+
 namespace BookCatalogController
 {
   public interface Controller
   {
-    Presenter ControlPresenter { get; }
+   
   }
 }

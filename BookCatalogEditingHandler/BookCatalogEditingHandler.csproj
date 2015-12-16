@@ -79,12 +79,6 @@
     <Compile Include="ResponseModel\QueryAllCatalogPropertiesResponseModelImpl.cs" />
     <Compile Include="ResponseModel\RemoveBookCatalogPropertyResponseModelImpl.cs" />
     <Compile Include="ResponseModel\RemoveBookItemResponseModelImpl.cs" />
-    <Compile Include="Test\Controller\AddBookItemControllerTester.cs" />
-    <Compile Include="Test\Controller\ModifyBookCatalogPropertyControllerTester.cs" />
-    <Compile Include="Test\Controller\ModifyBookItemControllerTester.cs" />
-    <Compile Include="Test\Controller\QueryAllBookCatalogPropertiesControllerTester.cs" />
-    <Compile Include="Test\Controller\RemoveBookCatalogPropertyControllerTester.cs" />
-    <Compile Include="Test\Controller\RemoveBookItemControllerTester.cs" />
     <Compile Include="Test\Integration\AddBookCatalogPropertyTester.cs" />
     <Compile Include="RequestExecutor.cs" />
     <Compile Include="ResponseModel\ResponseModel.cs" />
@@ -99,7 +93,6 @@
     <Compile Include="Test\Integration\QueryAllBookCatalogPropertiesTester.cs" />
     <Compile Include="Test\Integration\RemoveBookCatalogPropertyTester.cs" />
     <Compile Include="Test\Integration\RemoveBookItemTester.cs" />
-    <Compile Include="Test\Controller\AddBookCatalogPropertyControllerTester.cs" />
     <Compile Include="Usecase\QueryAllCatalogPropertiesUsecase.cs" />
     <Compile Include="Test\QueryAllCatalogPropertiesUsecaseTester.cs" />
     <Compile Include="ResponseModel\RemoveBookCatalogPropertyResponseModel.cs" />

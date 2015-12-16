@@ -1,3 +1,4 @@
+using System;
 using BookCatalogEditingHandler.ResponseModel;
 using BookCatalogEditor.RequestModelFactory;
 using BookCatelogEditingHandler;
@@ -6,20 +7,18 @@ namespace BookCatalogController
 {
   public class ModifyBookItemController : Controller
   {
-    public Presenter ControlPresenter { get; set; }
+    private ModifyBookItemResponseModel _responseModel;
 
-    public void Execute(int index, string name, string publisher)
+    public ModifyBookItemResponseModel ResponseModel
     {
-      var request = ModifyBookItemRequestModelFactory.Create(index, name, publisher);
-      var response = (ModifyBookItemResponseModel) RequestExecutor.Execute(request);
-
-      if (null != response)
-      {
-        ControlPresenter = new MessagePresenter();
-        ControlPresenter.PresentedData = "Item has been modified";
-      }
+      get { return _responseModel;}
     }
 
-    
+    public void Execute(string input)
+    {
+      string[] inputs = input.Split(',');
+      var request = ModifyBookItemRequestModelFactory.Create(Convert.ToInt32(inputs[0]), inputs[1], inputs[2]);
+      _responseModel = (ModifyBookItemResponseModel)RequestExecutor.Execute(request);
+    }
   }
 }

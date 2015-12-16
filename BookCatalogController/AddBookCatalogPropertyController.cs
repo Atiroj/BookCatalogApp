@@ -1,4 +1,6 @@
+using System.Linq.Expressions;
 using BookCatalogEditingHandler.ResponseModel;
+using BookCatalogEditingHandler.Usecase;
 using BookCatalogEditor.RequestModelFactory;
 using BookCatelogEditingHandler;
 
@@ -6,19 +8,19 @@ namespace BookCatalogController
 {
   public class AddBookCatalogPropertyController : Controller
   {
-    public Presenter ControlPresenter { get; set; }
+    private AddBookCatalogProperyResponseModel _responseModel;
 
-    public void Execute(string name, string value)
+    public AddBookCatalogProperyResponseModel ResponseModel
     {
-      var request = AddBookCatalogPropertyRequestModelFactory.Create(name, value);
-      var response = (AddBookCatalogProperyResponseModel)RequestExecutor.Execute(request);
-
-      if (response != null)
-      {
-        ControlPresenter = new MessagePresenter();
-        ControlPresenter.PresentedData = "Property has been added";
-      }
-      
+      get { return _responseModel; }
     }
+
+    public void Execute(string input)
+    {
+      string[] inputs = input.Split(',');
+      var request = AddBookCatalogPropertyRequestModelFactory.Create(inputs[0], inputs[1]);
+      _responseModel = (AddBookCatalogProperyResponseModel)RequestExecutor.Execute(request);
+    }
+    
   }
 }

@@ -1,3 +1,4 @@
+using System;
 using BookCatalogEditingHandler.ResponseModel;
 using BookCatalogEditor.RequestModelFactory;
 using BookCatelogEditingHandler;
@@ -6,18 +7,20 @@ namespace BookCatalogController
 {
   public class RemoveBookItemController : Controller
   {
-    public Presenter ControlPresenter { get; set; }
+    private RemoveBookItemResponseModel _responseModel;
 
-    public void Execute(int index)
+    public RemoveBookItemResponseModel ResponseModel
     {
-      var request = RemoveBookItemRequestModelFactory.Create(index);
-      var response = (RemoveBookItemResponseModel) RequestExecutor.Execute(request);
+      get { return _responseModel;}
+    }
 
-      if (null != response)
-      {
-        ControlPresenter = new MessagePresenter();
-        ControlPresenter.PresentedData = "Item has been removed";
-      }
-    } 
+    public void Execute(string input)
+    {
+      int index = Convert.ToInt32(input);
+      var request = RemoveBookItemRequestModelFactory.Create(index);
+      _responseModel = (RemoveBookItemResponseModel)RequestExecutor.Execute(request);
+    }
+
+    
   }
 }

@@ -4,13 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BookCatalogController;
+using BookCatalogEditingHandler.ResponseModel;
 
 namespace BookCatalogConsole
 {
   public class Program
   {
     static void Main(string[] args)
-    {
+    {    
       string command;
       while ((command = GetCommand()) != "EXIT")
       {
@@ -47,29 +48,29 @@ namespace BookCatalogConsole
       }
     }
 
-    private static void ShowResultOnConsole(Controller controller)
+    private static void ShowData(ResponseModel responseModel)
     {
-      ConsolePresenter presenter = new ConsolePresenter();
-      presenter.SetData(controller);
-      presenter.ShowData();
+      ConsolePresenter consolePresenter = new ConsolePresenter();
+      consolePresenter.ResponseModel = responseModel;
+      consolePresenter.GenerateView();
     }
-
+   
     private static void RemoveItemCommand()
     {
       string input = Console.ReadLine();
       var removeBookItemController = new RemoveBookItemController();
-      removeBookItemController.Execute(Convert.ToInt32(input));
+      removeBookItemController.Execute(input);
 
-      ShowResultOnConsole(removeBookItemController);
+      ShowData(removeBookItemController.ResponseModel);
     }
 
     private static void RemovePropertyCommand()
     {
       string input = Console.ReadLine();
       var removeBookCatalogPropertyController = new RemoveBookCatalogPropertyController();
-      removeBookCatalogPropertyController.Execute(Convert.ToInt32(input));
+      removeBookCatalogPropertyController.Execute(input);
 
-      ShowResultOnConsole(removeBookCatalogPropertyController);
+      ShowData(removeBookCatalogPropertyController.ResponseModel);
     }
 
     private static void QueryAllPropertyCommand()
@@ -77,51 +78,48 @@ namespace BookCatalogConsole
       var queryAllBookCatalogPropertiesController = new QueryAllBookCatalogPropertiesController();
       queryAllBookCatalogPropertiesController.Execute();
 
-      ShowResultOnConsole(queryAllBookCatalogPropertiesController);
+      ShowData(queryAllBookCatalogPropertiesController.ResponseModel);
     }
 
     private static void ModifyItemCommand()
     {
       string input = Console.ReadLine();
-      string[] inputs = input.Split(',');
 
       var modifyBookItemController = new ModifyBookItemController();
-      modifyBookItemController.Execute(Convert.ToInt32(inputs[0]), inputs[1], inputs[2]);
+      modifyBookItemController.Execute(input);
 
-      ShowResultOnConsole(modifyBookItemController);
+      ShowData(modifyBookItemController.ResponseModel);
     }
 
     private static void AddItemCommand()
     {
       string input = Console.ReadLine();
-      string[] inputs = input.Split(',');
 
       var addBookCatalogPropertyController = new AddBookCatalogPropertyController();
-      addBookCatalogPropertyController.Execute(inputs[0], inputs[1]);
+      addBookCatalogPropertyController.Execute(input);
 
-      ShowResultOnConsole(addBookCatalogPropertyController);
+      ShowData(addBookCatalogPropertyController.ResponseModel);
     }
 
     private static void ModifyPropertyCommand()
     {
       string input = Console.ReadLine();
-      string[] inputs = input.Split(',');
 
       var modifyBookCatalogPropertyController = new ModifyBookCatalogPropertyController();
-      modifyBookCatalogPropertyController.Execute(Convert.ToInt32(inputs[0]), inputs[1], inputs[2]);
+      modifyBookCatalogPropertyController.Execute(input);
 
-      ShowResultOnConsole(modifyBookCatalogPropertyController);
+      ShowData(modifyBookCatalogPropertyController.ResponseModel);
     }
 
     private static void AddPropertyCommand()
     {
       string input = Console.ReadLine();
-      string[] inputs = input.Split(',');
 
       var addBookCatalogPropertyController = new AddBookCatalogPropertyController();
-      addBookCatalogPropertyController.Execute(inputs[0], inputs[1]);
+      addBookCatalogPropertyController.Execute(input);
 
-      ShowResultOnConsole(addBookCatalogPropertyController);
+      ShowData(addBookCatalogPropertyController.ResponseModel);
+
     }
 
     public static string GetCommand()
