@@ -12,11 +12,11 @@ namespace BookCatalogEditingHandler.Test.Integration
     [Test]
     public void TestExecute()
     {
-      int previousNumber = BookCatalogContext.BookItems.Count;
+      int previousNumber = BookCatalogContext.BookCatalogDataGateWay.BookItems.Count;
       var request = AddBookItemRequestModelFactory.Create("newName", "newValue");
       var response = (AddBookItemResponseModel)RequestExecutor.Execute(request);
       Assert.IsTrue(response.ExecuteResult);
-      Assert.AreEqual(previousNumber + 1, BookCatalogContext.BookItems.Count);
+      Assert.AreEqual(previousNumber + 1, BookCatalogContext.BookCatalogDataGateWay.BookItems.Count);
     }
   }
 }

@@ -27,7 +27,7 @@ namespace BookCatalogEditingHandler.Usecase
     {
       QueryAllCatalogPropertiesResponseModelImpl result = new QueryAllCatalogPropertiesResponseModelImpl
       {
-        PresentableCatalogProperties = BookCatalogContext.CatalogProperties.Select
+        PresentableCatalogProperties = BookCatalogContext.BookCatalogDataGateWay.BookCatalogProperties.Select
           (
             catalogProperty => new PresentableCatalogProperty(
               catalogProperty.Name, catalogProperty.Value)

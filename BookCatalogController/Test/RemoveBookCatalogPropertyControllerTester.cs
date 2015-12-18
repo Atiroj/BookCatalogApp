@@ -1,12 +1,13 @@
 using System.Configuration;
 using BookCatalogController;
 using BookCatalogEditingHandler.Context;
+using XmlDataGateWay;
 using NUnit.Framework;
 
 namespace BookCatalogController.Test
 {
   [TestFixture]
-  public class RemoveBookCatalogPropertyControllerTester 
+  public class RemoveBookCatalogPropertyControllerTester : GivenXMLDataGateWay
   {
     private RemoveBookCatalogPropertyController _controller;
 

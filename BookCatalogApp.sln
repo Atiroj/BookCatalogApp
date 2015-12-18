@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookCatalogConsole", "BookC
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookCatalogController", "BookCatalogController\BookCatalogController.csproj", "{8FB847A0-C2C3-4042-9D0E-3955F792B712}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XmlDataGateWay", "XmlDataGateWay\XmlDataGateWay.csproj", "{8D84EFCC-E9FC-42B6-B29E-DE9A7ACCDCA3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{8FB847A0-C2C3-4042-9D0E-3955F792B712}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8FB847A0-C2C3-4042-9D0E-3955F792B712}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8FB847A0-C2C3-4042-9D0E-3955F792B712}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D84EFCC-E9FC-42B6-B29E-DE9A7ACCDCA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D84EFCC-E9FC-42B6-B29E-DE9A7ACCDCA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D84EFCC-E9FC-42B6-B29E-DE9A7ACCDCA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D84EFCC-E9FC-42B6-B29E-DE9A7ACCDCA3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

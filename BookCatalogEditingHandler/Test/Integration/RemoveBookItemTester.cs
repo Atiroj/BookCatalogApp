@@ -12,12 +12,12 @@ namespace BookCatalogEditingHandler.Test.Integration
     [Test]
     public void TestExecute()
     {
-      int previousCount = BookCatalogContext.BookItems.Count;
+      int previousCount = BookCatalogContext.BookCatalogDataGateWay.BookItems.Count;
       var request = RemoveBookItemRequestModelFactory.Create(0);
       var respond = (RemoveBookItemResponseModel) RequestExecutor.Execute(request);
 
       Assert.IsTrue(respond.ExecuteResult);
-      Assert.AreEqual(previousCount -1, BookCatalogContext.BookItems.Count);
+      Assert.AreEqual(previousCount -1, BookCatalogContext.BookCatalogDataGateWay.BookItems.Count);
     }
   }
 }

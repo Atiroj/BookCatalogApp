@@ -16,11 +16,11 @@ namespace BookCatalogEditingHandler.Test.Integration
     [Test]
     public void TestExecute()
     {
-      int previousNumber = BookCatalogContext.CatalogProperties.Count;
+      int previousNumber = BookCatalogContext.BookCatalogDataGateWay.BookCatalogProperties.Count;
       var request = AddBookCatalogPropertyRequestModelFactory.Create("newName", "newValue");
       var response = (AddBookCatalogProperyResponseModel)RequestExecutor.Execute(request);
       Assert.IsTrue(response.ExecuteResult);
-      Assert.AreEqual(previousNumber + 1, BookCatalogContext.CatalogProperties.Count);
+      Assert.AreEqual(previousNumber + 1, BookCatalogContext.BookCatalogDataGateWay.BookCatalogProperties.Count);
     }    
   }
 }

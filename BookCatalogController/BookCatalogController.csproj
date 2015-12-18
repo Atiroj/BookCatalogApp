@@ -45,13 +45,19 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="XmlDataGateWay, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\XmlDataGateWay\bin\Debug\XmlDataGateWay.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AddBookCatalogPropertyController.cs" />
     <Compile Include="AddBookItemController.cs" />
     <Compile Include="Controller.cs" />
+    <Compile Include="ReadDataFileController.cs" />
     <Compile Include="Test\AddBookCatalogPropertyControllerTester.cs" />
     <Compile Include="Test\AddBookItemControllerTester.cs" />
+    <Compile Include="Test\GivenXMLDataGateWay.cs" />
     <Compile Include="Test\ModifyBookCatalogPropertyControllerTester.cs" />
     <Compile Include="Test\ModifyBookItemControllerTester.cs" />
     <Compile Include="Test\QueryAllBookCatalogPropertiesControllerTester.cs" />

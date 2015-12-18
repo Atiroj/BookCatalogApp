@@ -16,8 +16,8 @@ namespace BookCatalogEditingHandler.Test.Integration
       var respond = (ModifyBookItemResponseModel) RequestExecutor.Execute(request);
 
       Assert.IsTrue(respond.ExecuteResult);
-      Assert.AreEqual(BookCatalogContext.BookItems[0].Name, "newName");
-      Assert.AreEqual(BookCatalogContext.BookItems[0].Publisher, "newPublisher");
+      Assert.AreEqual(BookCatalogContext.BookCatalogDataGateWay.BookItems[0].Name, "newName");
+      Assert.AreEqual(BookCatalogContext.BookCatalogDataGateWay.BookItems[0].Publisher, "newPublisher");
     }
   }
 }

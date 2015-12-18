@@ -17,10 +17,10 @@ namespace BookCatalogEditingHandler.Usecase
         removeItemResponseModel.ExecuteResult = false;
       else
       {
-        if (removeItemRequestModel.Index >= BookCatalogContext.BookItems.Count)
+        if (removeItemRequestModel.Index >= BookCatalogContext.BookCatalogDataGateWay.BookItems.Count)
           throw new ArgumentOutOfRangeException("Index");
 
-        BookCatalogContext.BookItems.RemoveAt(removeItemRequestModel.Index);
+        BookCatalogContext.BookCatalogDataGateWay.BookItems.RemoveAt(removeItemRequestModel.Index);
         removeItemResponseModel.ExecuteResult = true;
       }
      

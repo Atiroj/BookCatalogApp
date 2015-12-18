@@ -26,7 +26,7 @@ namespace BookCatalogEditingHandler.Test
       var newValue = "newValue";
       var request = new ModifyBookCatalogPropertyRequestModelImpl(0, newName, newValue);
       _usecase.Execute(request);
-      var property = BookCatalogContext.CatalogProperties.First();
+      var property = BookCatalogContext.BookCatalogDataGateWay.BookCatalogProperties.First();
       Assert.AreEqual(newName, property.Name);
       Assert.AreEqual(newValue, property.Value);
     }
@@ -45,8 +45,8 @@ namespace BookCatalogEditingHandler.Test
       _usecase.Execute(request1);
       _usecase.Execute(request2);
 
-      var property1 = BookCatalogContext.CatalogProperties[0];
-      var property2 = BookCatalogContext.CatalogProperties[3];
+      var property1 = BookCatalogContext.BookCatalogDataGateWay.BookCatalogProperties[0];
+      var property2 = BookCatalogContext.BookCatalogDataGateWay.BookCatalogProperties[3];
 
       Assert.AreEqual(newName1, property1.Name);
       Assert.AreEqual(newValue1, property1.Value);

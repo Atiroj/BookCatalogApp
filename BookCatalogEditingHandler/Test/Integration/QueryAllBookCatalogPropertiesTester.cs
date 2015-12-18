@@ -23,12 +23,12 @@ namespace BookCatalogEditingHandler.Test.Integration
 
     public void AssertQueryAllBookCatalogResult(QueryAllCatalogPropertiesResponseModel responseModel)
     {
-      Assert.AreEqual(responseModel.PresentableCatalogProperties.Count, BookCatalogContext.CatalogProperties.Count);
+      Assert.AreEqual(responseModel.PresentableCatalogProperties.Count, BookCatalogContext.BookCatalogDataGateWay.BookCatalogProperties.Count);
 
       for (int index = 0; index < responseModel.PresentableCatalogProperties.Count; index++)
       {
-        Assert.AreEqual(responseModel.PresentableCatalogProperties[index].Name, BookCatalogContext.CatalogProperties[index].Name);
-        Assert.AreEqual(responseModel.PresentableCatalogProperties[index].Value, BookCatalogContext.CatalogProperties[index].Value);
+        Assert.AreEqual(responseModel.PresentableCatalogProperties[index].Name, BookCatalogContext.BookCatalogDataGateWay.BookCatalogProperties[index].Name);
+        Assert.AreEqual(responseModel.PresentableCatalogProperties[index].Value, BookCatalogContext.BookCatalogDataGateWay.BookCatalogProperties[index].Value);
 
       }
     }

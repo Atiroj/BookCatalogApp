@@ -22,18 +22,18 @@ namespace BookCatalogEditingHandler.Test
     [Test]
     public void AddNothing()
     {
-      int previousNumber = BookCatalogContext.CatalogProperties.Count;
+      int previousNumber = BookCatalogContext.BookCatalogDataGateWay.BookCatalogProperties.Count;
       _usecase.Execute(null);
-      Assert.AreEqual(previousNumber, BookCatalogContext.CatalogProperties.Count);
+      Assert.AreEqual(previousNumber, BookCatalogContext.BookCatalogDataGateWay.BookCatalogProperties.Count);
     }
 
     [Test]
     public void AddAProperty()
     {
-      int previousNumber = BookCatalogContext.CatalogProperties.Count;
+      int previousNumber = BookCatalogContext.BookCatalogDataGateWay.BookCatalogProperties.Count;
       var request = new AddBookCatalogPropertyRequestModelImpl("CatalogName", "Catalog1");
       _usecase.Execute(request);
-      Assert.AreEqual(previousNumber + 1, BookCatalogContext.CatalogProperties.Count);
+      Assert.AreEqual(previousNumber + 1, BookCatalogContext.BookCatalogDataGateWay.BookCatalogProperties.Count);
     }
   }
 }

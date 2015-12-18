@@ -22,7 +22,7 @@ namespace BookCatalogEditingHandler.Usecase
       {
         var catalogProperty = new CatalogProperty(
           addCatalogPropertyRequestModel.Name, addCatalogPropertyRequestModel.Value);
-        BookCatalogContext.CatalogProperties.Add(catalogProperty);
+        BookCatalogContext.BookCatalogDataGateWay.BookCatalogProperties.Add(catalogProperty);
 
         addCatalogPropertyResponseModel.ExecuteResult = true;
       }

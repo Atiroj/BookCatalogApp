@@ -24,16 +24,16 @@ namespace BookCatalogEditingHandler.Test
     [Test]
     public void RemoveOneBookItem()
     {
-      int previousCount = BookCatalogContext.BookItems.Count;
+      int previousCount = BookCatalogContext.BookCatalogDataGateWay.BookItems.Count;
       var request = new RemoveBookItemRequestModelImpl(0);
       _usecase.Execute(request);
-      Assert.AreEqual(previousCount - 1, BookCatalogContext.BookItems.Count);
+      Assert.AreEqual(previousCount - 1, BookCatalogContext.BookCatalogDataGateWay.BookItems.Count);
     }
 
     [Test]
     public void RemoveMultiBookItems()
     {
-      int previousCount = BookCatalogContext.BookItems.Count;
+      int previousCount = BookCatalogContext.BookCatalogDataGateWay.BookItems.Count;
 
       var request1 = new RemoveBookItemRequestModelImpl(0);
       _usecase.Execute(request1);
@@ -41,7 +41,7 @@ namespace BookCatalogEditingHandler.Test
       var request2 = new RemoveBookItemRequestModelImpl(1);
       _usecase.Execute(request2);
 
-      Assert.AreEqual(previousCount - 2, BookCatalogContext.BookItems.Count);
+      Assert.AreEqual(previousCount - 2, BookCatalogContext.BookCatalogDataGateWay.BookItems.Count);
     }
 
     

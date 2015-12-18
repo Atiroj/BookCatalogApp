@@ -17,12 +17,12 @@ namespace BookCatalogEditingHandler.Usecase
         modifyCatalogProppertyResponseModel.ExecuteResult = false;
       else
       {
-        if (modifyCatalogProeprtyRequestModel.Index >= BookCatalogContext.CatalogProperties.Count)
+        if (modifyCatalogProeprtyRequestModel.Index >= BookCatalogContext.BookCatalogDataGateWay.BookCatalogProperties.Count)
           throw new ArgumentOutOfRangeException("Index");
 
         var catalogProperty = new CatalogProperty(modifyCatalogProeprtyRequestModel.Name, modifyCatalogProeprtyRequestModel.Value);
 
-        BookCatalogContext.CatalogProperties[modifyCatalogProeprtyRequestModel.Index] = catalogProperty;
+        BookCatalogContext.BookCatalogDataGateWay.BookCatalogProperties[modifyCatalogProeprtyRequestModel.Index] = catalogProperty;
         modifyCatalogProppertyResponseModel.ExecuteResult = true;
       }
          

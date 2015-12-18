@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Data.Common;
 using BookCatalogController;
+using BookCatalogController.Test;
 using BookCatalogEditingHandler.Context;
 using BookCatalogEditingHandler.Entity;
 using BookCatalogEditingHandler.ResponseModel;
@@ -9,7 +10,7 @@ using NUnit.Framework;
 namespace BookCatalogController
 {
   [TestFixture]
-  public class QueryAllBookCatalogPropertiesControllerTester 
+  public class QueryAllBookCatalogPropertiesControllerTester : GivenXMLDataGateWay
   {
     private QueryAllBookCatalogPropertiesController _controller;
 

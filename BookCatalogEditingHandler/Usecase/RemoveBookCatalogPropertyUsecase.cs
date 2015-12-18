@@ -17,10 +17,10 @@ namespace BookCatalogEditingHandler.Usecase
         removeBookCatalogPropertyResponseModel.ExecuteResult = false;
       else
       {
-        if (removeBookCatalogPropertyRequestModel.Index >= BookCatalogContext.CatalogProperties.Count)
+        if (removeBookCatalogPropertyRequestModel.Index >= BookCatalogContext.BookCatalogDataGateWay.BookCatalogProperties.Count)
           throw new ArgumentOutOfRangeException("Index");
 
-        BookCatalogContext.CatalogProperties.RemoveAt(removeBookCatalogPropertyRequestModel.Index);
+        BookCatalogContext.BookCatalogDataGateWay.BookCatalogProperties.RemoveAt(removeBookCatalogPropertyRequestModel.Index);
         removeBookCatalogPropertyResponseModel.ExecuteResult = true;
       }
       

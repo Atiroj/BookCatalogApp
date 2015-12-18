@@ -18,11 +18,11 @@ namespace BookCatalogEditingHandler.Usecase
         modifyBookItemResponseModel.ExecuteResult = false;
       else
       {
-        if (modifyBookItemRequestModel.Index >= BookCatalogContext.BookItems.Count)
+        if (modifyBookItemRequestModel.Index >= BookCatalogContext.BookCatalogDataGateWay.BookItems.Count)
           throw new ArgumentOutOfRangeException("Index");
 
         var bookItem = new BookItem(modifyBookItemRequestModel.Name, modifyBookItemRequestModel.Publisher);
-        BookCatalogContext.BookItems[modifyBookItemRequestModel.Index] = bookItem;
+        BookCatalogContext.BookCatalogDataGateWay.BookItems[modifyBookItemRequestModel.Index] = bookItem;
         modifyBookItemResponseModel.ExecuteResult = true;
       }
       

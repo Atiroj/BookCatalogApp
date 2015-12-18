@@ -44,14 +44,23 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="XmlDataGateWay">
+      <HintPath>..\XmlDataGateWay\bin\Debug\XmlDataGateWay.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Context\BookCatalogContextTester.cs" />
     <Compile Include="Entity\CatalogProperty.cs" />
+    <Compile Include="RequestExecutor.cs" />
+    <Compile Include="Usecase\ReadDataFileUseCase.cs" />
     <Compile Include="RequestModelFactory\AddBookCatalogPropertyRequestModelFactory.cs" />
     <Compile Include="RequestModelFactory\AddBookItemRequestModelFactory.cs" />
     <Compile Include="RequestModelFactory\ModifyBookCatalogPropertyRequestModelFactory.cs" />
     <Compile Include="RequestModelFactory\ModifyBookItemRequestModelFactory.cs" />
     <Compile Include="RequestModelFactory\QueryAllBookCatalogPropertiesModelFactory.cs" />
+    <Compile Include="RequestModel\ReadDataFileRequestModelImpl.cs" />
+    <Compile Include="RequestModel\ReadDataFileRequestModel.cs" />
+    <Compile Include="RequestModelFactory\ReadDataFileRequestModelFactory.cs" />
     <Compile Include="RequestModelFactory\RemoveBookCatalogPropertyModelFactory.cs" />
     <Compile Include="RequestModelFactory\RemoveBookItemRequestModelFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -77,10 +86,12 @@
     <Compile Include="ResponseModel\PresentableCatalogProperty.cs" />
     <Compile Include="ResponseModel\QueryAllCatalogPropertiesResponseModel.cs" />
     <Compile Include="ResponseModel\QueryAllCatalogPropertiesResponseModelImpl.cs" />
+    <Compile Include="ResponseModel\ReadDataFileResponseModel.cs" />
+    <Compile Include="ResponseModel\ReadDataFileResponseModelImpl.cs" />
     <Compile Include="ResponseModel\RemoveBookCatalogPropertyResponseModelImpl.cs" />
     <Compile Include="ResponseModel\RemoveBookItemResponseModelImpl.cs" />
+    <Compile Include="GateWay\DataGateWay.cs" />
     <Compile Include="Test\Integration\AddBookCatalogPropertyTester.cs" />
-    <Compile Include="RequestExecutor.cs" />
     <Compile Include="ResponseModel\ResponseModel.cs" />
     <Compile Include="RequestModel\RequestModel.cs" />
     <Compile Include="ResponseModel\AddBookCatalogProperyResponseModel.cs" />

@@ -4,12 +4,12 @@ using NUnit.Framework;
 namespace BookCatalogController.Test
 {
   [TestFixture]
-  public class ModifyBookCatalogPropertyControllerTester 
+  public class ModifyBookCatalogPropertyControllerTester : GivenXMLDataGateWay
   {
     private ModifyBookCatalogPropertyController _controller;
 
     [SetUp]
-    public void SetUp()
+    public new void SetUp()
     {
       _controller = new ModifyBookCatalogPropertyController();
     }

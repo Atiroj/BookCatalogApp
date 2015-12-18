@@ -20,7 +20,7 @@ namespace BookCatalogEditingHandler.Usecase
         else
         {
           var bookItem = new BookItem(addBookItemRequestModel.Name, addBookItemRequestModel.Publisher);
-          BookCatalogContext.BookItems.Add(bookItem);
+          BookCatalogContext.BookCatalogDataGateWay.BookItems.Add(bookItem);
 
           addBookItemResponseModel.ExecuteResult = true;
         }

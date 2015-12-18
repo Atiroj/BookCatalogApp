@@ -27,7 +27,7 @@ namespace BookCatalogEditingHandler.Test
       var request = new QueryAllCatalogPropertiesRequestModelImpl();
       
       var response = _usecase.Execute(request);
-      AssertCatalogPropertiesAreEqual(BookCatalogContext.CatalogProperties, response.PresentableCatalogProperties );
+      AssertCatalogPropertiesAreEqual(BookCatalogContext.BookCatalogDataGateWay.BookCatalogProperties, response.PresentableCatalogProperties );
     }
 
     private void AssertCatalogPropertiesAreEqual

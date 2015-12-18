@@ -21,6 +21,5 @@ namespace BookCatalogController
       var request = AddBookCatalogPropertyRequestModelFactory.Create(inputs[0], inputs[1]);
       _responseModel = (AddBookCatalogProperyResponseModel)RequestExecutor.Execute(request);
     }
-    
   }
 }

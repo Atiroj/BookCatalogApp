@@ -19,18 +19,18 @@ namespace BookCatalogEditingHandler.Test
     [Test]
     public void RemoveFirstProperty()
     {
-      var propertyCount = BookCatalogContext.CatalogProperties.Count;
+      var propertyCount = BookCatalogContext.BookCatalogDataGateWay.BookCatalogProperties.Count;
 
       var request = new RemoveBookCatalogPropertyRequestModelImpl(0);
       _usecase.Execute(request);
 
-      Assert.AreEqual(propertyCount - 1, BookCatalogContext.CatalogProperties.Count);
+      Assert.AreEqual(propertyCount - 1, BookCatalogContext.BookCatalogDataGateWay.BookCatalogProperties.Count);
     }
 
     [Test]
     public void RemoveMultipleProperties()
     {
-      var propertyCount = BookCatalogContext.CatalogProperties.Count;
+      var propertyCount = BookCatalogContext.BookCatalogDataGateWay.BookCatalogProperties.Count;
 
       var request1 = new RemoveBookCatalogPropertyRequestModelImpl(0);
       _usecase.Execute(request1);
@@ -41,7 +41,7 @@ namespace BookCatalogEditingHandler.Test
       var request3 = new RemoveBookCatalogPropertyRequestModelImpl(2);
       _usecase.Execute(request3);
 
-      Assert.AreEqual(propertyCount - 3, BookCatalogContext.CatalogProperties.Count);
+      Assert.AreEqual(propertyCount - 3, BookCatalogContext.BookCatalogDataGateWay.BookCatalogProperties.Count);
     }
   }
 }

@@ -20,29 +20,29 @@ namespace BookCatalogEditingHandler.Test
     [Test]
     public void AddNothing()
     {
-      int previousCount = BookCatalogContext.BookItems.Count;
+      int previousCount = BookCatalogContext.BookCatalogDataGateWay.BookItems.Count;
       _usecase.Execute(null);
-      Assert.AreEqual(previousCount, BookCatalogContext.BookItems.Count);
+      Assert.AreEqual(previousCount, BookCatalogContext.BookCatalogDataGateWay.BookItems.Count);
     }
 
     [Test]
     public void AddOneBookItem()
     {
-      int previousCount = BookCatalogContext.BookItems.Count;
+      int previousCount = BookCatalogContext.BookCatalogDataGateWay.BookItems.Count;
       string name = "newBook1";
       string publisher = "McGrownHell";
       var item = new BookItem(name, publisher);
       var request = new AddBookItemRequestModelImpl(name, publisher);
       _usecase.Execute(request);
-      Assert.AreEqual(previousCount + 1, BookCatalogContext.BookItems.Count);
-      Assert.AreEqual(name, BookCatalogContext.BookItems[0].Name);
-      Assert.AreEqual(publisher, BookCatalogContext.BookItems[0].Publisher);
+      Assert.AreEqual(previousCount + 1, BookCatalogContext.BookCatalogDataGateWay.BookItems.Count);
+      Assert.AreEqual(name, BookCatalogContext.BookCatalogDataGateWay.BookItems[0].Name);
+      Assert.AreEqual(publisher, BookCatalogContext.BookCatalogDataGateWay.BookItems[0].Publisher);
     }
 
     [Test]
     public void AddMultiBookItem()
     {
-      int previousCount = BookCatalogContext.BookItems.Count;
+      int previousCount = BookCatalogContext.BookCatalogDataGateWay.BookItems.Count;
       string name1 = "newBook1";
       string publisher1 = "McGrownHell";
       var request1 = new AddBookItemRequestModelImpl(name1, publisher1);
@@ -53,11 +53,11 @@ namespace BookCatalogEditingHandler.Test
       var request2 = new AddBookItemRequestModelImpl(name2, publisher2);
       _usecase.Execute(request2);
 
-      Assert.AreEqual(previousCount + 2, BookCatalogContext.BookItems.Count);
-      Assert.AreEqual(name1, BookCatalogContext.BookItems[0].Name);
-      Assert.AreEqual(publisher1, BookCatalogContext.BookItems[0].Publisher);
-      Assert.AreEqual(name2, BookCatalogContext.BookItems[1].Name);
-      Assert.AreEqual(publisher2, BookCatalogContext.BookItems[1].Publisher);
+      Assert.AreEqual(previousCount + 2, BookCatalogContext.BookCatalogDataGateWay.BookItems.Count);
+      Assert.AreEqual(name1, BookCatalogContext.BookCatalogDataGateWay.BookItems[0].Name);
+      Assert.AreEqual(publisher1, BookCatalogContext.BookCatalogDataGateWay.BookItems[0].Publisher);
+      Assert.AreEqual(name2, BookCatalogContext.BookCatalogDataGateWay.BookItems[1].Name);
+      Assert.AreEqual(publisher2, BookCatalogContext.BookCatalogDataGateWay.BookItems[1].Publisher);
     }
   }
 

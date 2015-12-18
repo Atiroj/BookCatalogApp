@@ -4,7 +4,7 @@ using NUnit.Framework;
 namespace BookCatalogController.Test
 {
   [TestFixture]
-  public class AddBookItemControllerTester 
+  public class AddBookItemControllerTester : GivenXMLDataGateWay
   {
     private AddBookItemController _controller;
 

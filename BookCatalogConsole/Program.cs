@@ -3,8 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
 using BookCatalogController;
 using BookCatalogEditingHandler.ResponseModel;
+using BookCatalogEditingHandler.Context;
+using XmlDataGateWay;
 
 namespace BookCatalogConsole
 {
@@ -12,6 +15,11 @@ namespace BookCatalogConsole
   {
     static void Main(string[] args)
     {    
+      BookCatalogContext.SetDataGateWay(new XMLDataGateWayImpl());
+
+      Console.WriteLine("Please Enter FileName");
+      ReadDataFile(Console.ReadLine());
+
       string command;
       while ((command = GetCommand()) != "EXIT")
       {
@@ -46,6 +54,14 @@ namespace BookCatalogConsole
             break;
         }
       }
+    }
+
+    private static void ReadDataFile(string fileName)
+    {
+     var readDataFileController = new ReadDataFileController();
+      readDataFileController.Execute(fileName);
+
+      ShowData(readDataFileController.ResponseModel);
     }
 
     private static void ShowData(ResponseModel responseModel)

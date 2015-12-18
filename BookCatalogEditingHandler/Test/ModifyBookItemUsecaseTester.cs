@@ -26,8 +26,8 @@ namespace BookCatalogEditingHandler.Test
       var request = new ModifyBookItemRequestModelImpl(0, name, publisher);
       _usecase.Execute(request);
 
-      Assert.AreEqual(name, BookCatalogContext.BookItems[0].Name);
-      Assert.AreEqual(publisher, BookCatalogContext.BookItems[0].Publisher);
+      Assert.AreEqual(name, BookCatalogContext.BookCatalogDataGateWay.BookItems[0].Name);
+      Assert.AreEqual(publisher, BookCatalogContext.BookCatalogDataGateWay.BookItems[0].Publisher);
     }
 
     [Test]
@@ -43,10 +43,10 @@ namespace BookCatalogEditingHandler.Test
       var request2 = new ModifyBookItemRequestModelImpl(1, name2, publisher2);
       _usecase.Execute(request2);
 
-      Assert.AreEqual(name1, BookCatalogContext.BookItems[0].Name);
-      Assert.AreEqual(publisher1, BookCatalogContext.BookItems[0].Publisher);
-      Assert.AreEqual(name2, BookCatalogContext.BookItems[1].Name);
-      Assert.AreEqual(publisher2, BookCatalogContext.BookItems[1].Publisher);
+      Assert.AreEqual(name1, BookCatalogContext.BookCatalogDataGateWay.BookItems[0].Name);
+      Assert.AreEqual(publisher1, BookCatalogContext.BookCatalogDataGateWay.BookItems[0].Publisher);
+      Assert.AreEqual(name2, BookCatalogContext.BookCatalogDataGateWay.BookItems[1].Name);
+      Assert.AreEqual(publisher2, BookCatalogContext.BookCatalogDataGateWay.BookItems[1].Publisher);
     }
 
   }

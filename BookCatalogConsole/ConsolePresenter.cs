@@ -54,6 +54,10 @@ namespace BookCatalogConsole
       {
         _view.Data = ResponseModel.ExecuteResult == true ? "Item has been removed" : "FAIL to remove item";
       }
+      else if (ResponseModel is ReadDataFileResponseModel)
+      {
+        _view.Data = ResponseModel.ExecuteResult == true ? "File has been read" : "FAIL to read file";
+      }
 
       _view.ShowData();
     }

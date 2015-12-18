@@ -44,6 +44,11 @@ namespace BookCatelogEditingHandler
         var usecase = new RemoveBookItemUsecase();
         return usecase.Execute((RemoveBookItemRequestModel) request);
       }
+      else if (request is ReadDataFileRequestModel)
+      {
+        var usecase = new ReadDataFileUseCase();
+        return usecase.Execute((ReadDataFileRequestModel) request);
+      }
       else
       {
         throw new NotSupportedException("Request type wasn't supported.");
